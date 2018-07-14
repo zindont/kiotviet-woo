@@ -111,6 +111,11 @@ class Kiotviet_Woo {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-kiotviet-woo-i18n.php';
 
 		/**
+		 * The class for Kiotviet API
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api/class-kiotviet-woo-api.php';
+
+		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-kiotviet-woo-admin.php';
