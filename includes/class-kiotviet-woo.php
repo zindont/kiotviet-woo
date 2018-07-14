@@ -67,8 +67,8 @@ class Kiotviet_Woo {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'PLUGIN_NAME_VERSION' ) ) {
-			$this->version = PLUGIN_NAME_VERSION;
+		if ( defined( 'KIOTVIET_WOO_VERSION' ) ) {
+			$this->version = KIOTVIET_WOO_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
