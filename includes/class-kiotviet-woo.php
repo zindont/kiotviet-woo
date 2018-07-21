@@ -77,8 +77,8 @@ class Kiotviet_Woo {
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_admin_hooks();
-
 		$this->define_admin_menu();
+		$this->define_admin_settings();
 
 	}
 
@@ -136,6 +136,11 @@ class Kiotviet_Woo {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-kiotviet-woo-admin-menu.php';
 
+		/**
+		 * The class responsible for admin settings
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-kiotviet-woo-admin-settings.php';
+
 		$this->loader = new Kiotviet_Woo_Loader();
 
 	}
@@ -183,6 +188,19 @@ class Kiotviet_Woo {
 		$admin_menu = new Kiotviet_Woo_Admin_Menu( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_menu', $admin_menu, 'kiotviet_woo_admin_menu' );
+	}
+
+	/**
+	 * Register admin settings
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 */
+	private function define_admin_settings() {
+
+		$admin_settings = new Kiotviet_Woo_Admin_Settings( $this->get_plugin_name(), $this->get_version() );
+
+		$this->loader->add_filter( 'kiotviet_woo_admin_settings_tab', $admin_settings, 'kiotviet_woo_admin_settings_tab' );
 	}
 
 	/**

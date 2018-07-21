@@ -54,7 +54,7 @@ class Kiotviet_Woo_Admin_Menu extends Kiotviet_Woo_Admin {
 	 * Init the settings page.
 	 */
 	public function kiotviet_woo_admin_settings_page() {
-		echo "<h1>OUTPUT SETTINGPAGE</h1>";
+		Kiotviet_Woo_Admin_Settings::output();
 	}	
 
 }
